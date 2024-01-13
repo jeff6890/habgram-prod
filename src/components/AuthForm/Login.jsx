@@ -12,19 +12,19 @@ const Login = () => {
 
 	async function setToken(token) {
 
-		const res = await fetch('/api/verify', {
+		const res = await fetch('src\pages\api\verify.js', {
 			method: 'POST',
 			body: JSON.stringify({ token }),
 			headers: {
 				'content-type': 'application/json'
 			}
-		})
+		});
 
 		const data = await res.json()
 		if (data.success) {
 			// the token has been validated
 		}
-	}
+	};
 	return (
 		<>
 			<Input
