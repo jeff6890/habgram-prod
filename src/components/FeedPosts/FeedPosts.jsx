@@ -26,10 +26,10 @@ const FeedPosts = () => {
 			{!isLoading && posts.length > 0 && posts.map((post) => <FeedPost key={post.id} post={post} />)}
 			{!isLoading && posts.length === 0 && (
 				<>
-					<Text fontSize={"md"} color={"red.400"}>
-						Dayuum. Looks like you don&apos;t have any friends.
+					<Text fontSize={"md"} color={"pink.400"}>
+						Dayuum. Looks like you currently aren't following any friends.
 					</Text>
-					<Text color={"red.400"}>Stop coding and go make some!!</Text>
+					<Text color={"pink.400"}>Go follow some to start seeing their posts! :)</Text>
 				</>
 			)}
 		</Container>
