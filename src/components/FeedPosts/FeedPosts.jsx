@@ -29,7 +29,7 @@ const FeedPosts = () => {
 					<Text fontSize={"md"} color={"pink.400"}>
 						Dayuum. Looks like you currently aren't following any friends.
 					</Text>
-					<Text color={"pink.400"}>Go follow some to start seeing their posts! :)</Text>
+					<Text color={"pink.400"}>Go follow some to start seeing their posts! 🌠</Text>
 				</>
 			)}
 		</Container>

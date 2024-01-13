@@ -1,6 +1,7 @@
 import { Alert, AlertIcon, Button, Input } from "@chakra-ui/react";
 import { useState } from "react";
 import useLogin from "../../hooks/useLogin";
+import { Turnstile } from '@marsidev/react-turnstile';
 
 const Login = () => {
 	const [inputs, setInputs] = useState({
@@ -8,6 +9,22 @@ const Login = () => {
 		password: "",
 	});
 	const { loading, error, login } = useLogin();
+
+	async function setToken(token) {
+
+		const res = await fetch('/api/verify', {
+			method: 'POST',
+			body: JSON.stringify({ token }),
+			headers: {
+				'content-type': 'application/json'
+			}
+		})
+
+		const data = await res.json()
+		if (data.success) {
+			// the token has been validated
+		}
+	}
 	return (
 		<>
 			<Input
@@ -42,6 +59,11 @@ const Login = () => {
 			>
 				Log in
 			</Button>
+
+			<Turnstile
+				siteKey='0x4AAAAAAAP8-pmCLxfngs0S'
+				onSuccess={(token) => setToken(token)}
+			/>
 		</>
 	);
 };
